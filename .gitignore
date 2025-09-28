@@ -1,0 +1,15 @@
+venv/
+*.json
+*.exe
+requirements.txt
+*.out
+*.a
+src/report/
+*.o
+*.gcno
+*.pyc
+AAC_results/
+*.xlsx
+*.docx
+compilation-report.xml
+Modeling_Distributions__KS

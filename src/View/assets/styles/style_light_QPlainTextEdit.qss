@@ -1,0 +1,5 @@
+QPlainTextEdit {
+    background-color: #fdfeff;
+    color: #464d55;
+    border-radius: 0px;
+}

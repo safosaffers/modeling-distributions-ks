@@ -1,0 +1,196 @@
+
+QWidget {
+    background-color: rgb(154, 219, 242);
+}
+QFrame {
+    border: none;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 20px 28px;
+    margin-top: 19px;
+    margin-right: 12px;
+    background-color: #edf9fd;
+    border-radius: 15px;
+}
+QGroupBox {
+    background-color: #def3fb;
+    margin-top: 30px;
+    margin-right: 3px;
+	font: 800 20pt "Segoe UI";
+    color: #464d55;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 20px;
+}
+QToolTip {
+    color: #464d55;
+    background-color: #def3fb;
+	font: 14pt "Segoe UI";
+    font-weight: 600;
+    margin: 1px;
+    border: 3px solid #464d55;
+    border-radius: 6px;
+}
+QLabel, QCheckBox {
+    color: #464d55;
+    background-color: rgb(154, 219, 242);
+	font: 18pt "Segoe UI";
+    font-weight: 600;
+}
+QLineEdit {
+    color: #464d55;
+    background-color: #def3fb;
+	font: 18pt "Segoe UI";
+    font-weight: 600;
+}
+QLabel#l_technical_implementation,
+QLabel#l_about,
+QLabel#l_features {
+    color: #464d55;
+    background-color: #def3fb;
+	font: 18pt "Segoe UI";
+    font-weight: 600;
+}
+QPushButton {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #106381, stop:1 #1683aa);
+  font: 14pt "Verdana";
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #0d6efd;
+  padding: 5px 15px;
+  outline: 0px;
+}
+
+QPushButton:hover{
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #1683aa, stop:1 #b5ecff);
+	text-decoration: underline;
+  border: 3px solid #ECF0F4;
+}
+
+QSpinBox {
+    color: #37475E;
+    background-color: rgb(255, 255, 255);
+    padding: 3px 10px;
+	font: 18pt "Verdana";
+}
+
+#tb_sequence_representations QWidget{ 
+    background-color: #def3fb;
+}
+QPlainTextEdit {
+  color: #37475E;
+	font: 700 16pt "Verdana";
+  font-weight: 600;
+}
+/*--- QScrollBar ---*/
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: rgb(39, 39, 39);
+    width: 12px; /* ширина скроллбара */
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: rgb(39, 39, 39);
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: transparent;
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: transparent;
+}
+
+/* Горизонтальный скроллбар */
+QScrollBar:horizontal {
+    background: rgb(39, 39, 39);
+    height: 12px;
+}
+
+QScrollBar::handle:horizontal {
+    background:rgb(39, 39, 39);
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: transparent;
+    width: 0px;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: transparent;
+}
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: #f1f1f1;
+    width: 12px; /* для вертикального */
+    height: 12px; /* для горизонтального */
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #106381, stop:1 #1683aa);
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+/* --------QTABLEWIDGET-------- */ 
+QTableWidget {
+    gridline-color: #1683aa;
+	font: 18pt "Segoe UI";
+    background-color: #def3fb; /* фон таблицы */
+    outline: 0px; /* убирает пунктир при фокусе */
+}
+
+QTableWidget::item {
+	font: 18pt "Segoe UI";
+    font-weight: bold;
+    border: 1px solid #1683aa;
+    padding: 5px;
+    background-color: #fdfeff; /* фон ячейки */
+    color: #464d55; /* цвет текста */
+}
+
+QHeaderView::section {
+    background-color: #e0f0ff;
+    color: #464d55; /* цвет текста */
+    padding: 4px;
+    border: 1px solid #1683aa;
+	font: 16pt "Segoe UI";
+}
+QHeaderView {
+    background-color: #def3fb;
+    border: none;
+}
+QTableWidget::item:selected {
+    background-color: #b3d7ff;
+    color: black;
+}
+/* --------QTABLEWIDGET (END) -------- */ 
+
+/* LINE*/
+Line {
+    background-color: #edf9fd;
+}
+
+QCheckBox::indicator {
+    width: 30px;
+    height: 30px;
+}
+QCheckBox::indicator:checked
+{
+image: url(:/images/light_checked.png);
+}
+QCheckBox::indicator:unchecked
+{
+image: url(:/images/light_unchecked.png);
+}

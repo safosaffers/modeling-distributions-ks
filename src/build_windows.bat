@@ -1,0 +1,14 @@
+venv\Scripts\python.exe -m nuitka main.py ^
+    --windows-icon-from-ico=View/assets/images/logos.ico ^
+    --include-data-file=View/assets/resources_rc.py=View/assets/resources_rc.py ^
+    --remove-output --follow-imports --onefile ^
+    --enable-plugin=pyside6 ^
+    --include-module=PySide6.QtMultimedia ^
+    --onefile-windows-splash-screen-image=View/assets/images/loading.png ^
+    --report=compilation-report.xml ^
+    --windows-company-name="Karimov Safo Abdusodicovich" ^
+    --windows-product-name="Modeling Distributions" ^
+    --windows-file-version="1.0.0.0" ^
+    --windows-product-version="1.0.0.0" ^
+    --output-filename=Modeling_Distributions__KS  ^
+    --disable-console

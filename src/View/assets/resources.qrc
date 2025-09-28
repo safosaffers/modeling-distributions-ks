@@ -1,0 +1,49 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+
+        <!-- Иконки -->
+        <file alias="icons/dark_theme.ico">icons/dark_theme.ico</file>
+        <file alias="icons/light_theme.ico">icons/light_theme.ico</file>
+
+        <!-- Изображения -->
+        <file alias="images/dark_button_arrow_down.svg">images/dark_button_arrow_down.svg</file>
+        <file alias="images/dark_button_arrow_up.svg">images/dark_button_arrow_up.svg</file>
+        <file alias="images/dark_theme.svg">images/dark_theme.svg</file>
+        <file alias="images/en.svg">images/en.svg</file>
+        <file alias="images/light_button_arrow_down.svg">images/light_button_arrow_down.svg</file>
+        <file alias="images/light_button_arrow_up.svg">images/light_button_arrow_up.svg</file>
+        <file alias="images/light_theme.svg">images/light_theme.svg</file>
+        <file alias="images/loading.png">images/loading.png</file>
+        <file alias="images/logos.ico">images/logos.ico</file>
+        <file alias="images/ru.svg">images/ru.svg</file>
+        <file alias="images/light_unchecked.png">images/light_unchecked.png</file>
+        <file alias="images/light_checked.png">images/light_checked.png</file>
+        <file alias="images/dark_unchecked.png">images/dark_unchecked.png</file>
+        <file alias="images/dark_checked.png">images/dark_checked.png</file>
+
+
+        <!-- Звуки -->
+        <file alias="sounds/snd_error.wav">sounds/snd_error.wav</file>
+        <file alias="sounds/snd_success.wav">sounds/snd_success.wav</file>
+        <file alias="sounds/snd_warning.wav">sounds/snd_warning.wav</file>
+
+        <!-- Стили QSS -->
+        <file alias="styles/style_dark.qss">styles/style_dark.qss</file>
+        <file alias="styles/style_dark_menu.qss">styles/style_dark_menu.qss</file>
+        <file alias="styles/style_dark_QPlainTextEdit.qss">styles/style_dark_QPlainTextEdit.qss</file>
+        <file alias="styles/style_dark_tb_sequence_representations.qss">styles/style_dark_tb_sequence_representations.qss</file>
+        <file alias="styles/style_dark_toolTip.qss">styles/style_dark_toolTip.qss</file>
+
+        <file alias="styles/style_light.qss">styles/style_light.qss</file>
+        <file alias="styles/style_light_menu.qss">styles/style_light_menu.qss</file>
+        <file alias="styles/style_light_QPlainTextEdit.qss">styles/style_light_QPlainTextEdit.qss</file>
+        <file alias="styles/style_light_tb_sequence_representations.qss">styles/style_light_tb_sequence_representations.qss</file>
+        <file alias="styles/style_light_toolTip.qss">styles/style_light_toolTip.qss</file>
+
+        <!-- Переводы -->
+        <file alias="languages/language_ru.qm">languages/language_ru.qm</file>
+        <file alias="languages/language_en.qm">languages/language_en.qm</file>
+
+    </qresource>
+</RCC>

@@ -1,0 +1,10 @@
+
+QLabel {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #abc8d3, stop:1 #d5e3e9);
+  border-radius: 10px;
+	font: 18pt "Segoe UI";
+    font-weight: 1000;
+    padding: 0px;
+    margin: 0px;
+}

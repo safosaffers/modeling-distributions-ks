@@ -1,0 +1,11 @@
+python3 -m nuitka main.py \
+    --linux-icon=View/assets/images/logos.png \
+    --include-data-file=View/assets/resources_rc.py=View/assets/resources_rc.py \
+    --remove-output --follow-imports --onefile \
+    --enable-plugin=pyside6 \
+    --report=compilation-report.xml \
+    --company-name="Karimov Safo Abdusodicovich" \
+    --product-name="Modeling Distributions" \
+    --file-version="1.0.0.0" \
+    --product-version="1.0.0.0" \
+    --output-filename=Modeling_Distributions__KS

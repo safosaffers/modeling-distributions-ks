@@ -1,0 +1,59 @@
+QPushButton {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #106381, stop:1 #1683aa);
+  font: 14pt "Verdana";
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #0d6efd;
+  padding: 5px 15px;
+  outline: 0px;
+}
+QPushButton:hover{
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #1683aa, stop:1 #b5ecff);
+	text-decoration: underline;
+  border: 3px solid #ECF0F4;
+}
+
+QSpinBox{
+background-color: rgb(255, 255, 255)
+}
+QLabel {
+  color: #464d55;
+	font: 14pt "Segoe UI";
+  font-weight: 600;
+}
+
+QTabWidget::pane {
+    border: 0px;
+    background-color: #def3fb;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+QTabBar::tab {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #106381, stop:1 #1683aa);
+    min-width: 100px;
+	font: 700 14pt "Verdana";
+    color: white;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-right: 2px;
+}
+QTabWidget::tab-bar {
+    alignment: center;
+}
+QTabBar::tab:selected {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #1683aa, stop:1 #b5ecff);
+	text-decoration: underline;
+}
+QTabBar::tab:hover {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                      stop:0 #1683aa, stop:1 #b5ecff);
+}

@@ -1,0 +1,29 @@
+QFrame {
+    background-color: #343434;
+}
+QLabel {
+    color: #ffffff;
+	font: 14pt "Segoe UI";
+    font-weight: 600;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+QPushButton {
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 50px;
+  font: 12pt "Verdana";
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 15px;
+  outline: 0px;
+}
+
+QPushButton:hover{
+    background: rgb(193, 193, 193);
+	text-decoration: none;
+  border: none;
+}

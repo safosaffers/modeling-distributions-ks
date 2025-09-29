@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_View.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.8.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,11 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QFrame, QGroupBox,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGroupBox, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QPushButton,
+    QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_View(object):
     def setupUi(self, View):
@@ -372,37 +371,6 @@ class Ui_View(object):
 
         self.page_0_vl_content.addLayout(self.horizontalLayout_3)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
-
-        self.page_0_vl_content.addItem(self.verticalSpacer_2)
-
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
-
-        self.pb_uniform_distribution_calculate = QPushButton(self.page_0)
-        self.pb_uniform_distribution_calculate.setObjectName(u"pb_uniform_distribution_calculate")
-
-        self.horizontalLayout_2.addWidget(self.pb_uniform_distribution_calculate)
-
-        self.horizontalSpacer_3 = QSpacerItem(15, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_3)
-
-        self.cb_uniform_distribution_draw = QCheckBox(self.page_0)
-        self.cb_uniform_distribution_draw.setObjectName(u"cb_uniform_distribution_draw")
-
-        self.horizontalLayout_2.addWidget(self.cb_uniform_distribution_draw)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
-
-
-        self.page_0_vl_content.addLayout(self.horizontalLayout_2)
-
         self.verticalSpacer_22 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
 
         self.page_0_vl_content.addItem(self.verticalSpacer_22)
@@ -448,14 +416,36 @@ class Ui_View(object):
 
         self.page_0_vl_content.addLayout(self.horizontalLayout)
 
+        self.verticalSpacer_2 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+
+        self.page_0_vl_content.addItem(self.verticalSpacer_2)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.pb_uniform_distribution_calculate = QPushButton(self.page_0)
+        self.pb_uniform_distribution_calculate.setObjectName(u"pb_uniform_distribution_calculate")
+
+        self.horizontalLayout_2.addWidget(self.pb_uniform_distribution_calculate)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
+
+        self.page_0_vl_content.addLayout(self.horizontalLayout_2)
+
         self.verticalSpacer_26 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
 
         self.page_0_vl_content.addItem(self.verticalSpacer_26)
 
         self.page_0_vl_content.setStretch(0, 1)
         self.page_0_vl_content.setStretch(2, 1)
-        self.page_0_vl_content.setStretch(6, 1)
-        self.page_0_vl_content.setStretch(8, 8)
+        self.page_0_vl_content.setStretch(4, 1)
+        self.page_0_vl_content.setStretch(6, 8)
 
         self.verticalLayout_3.addLayout(self.page_0_vl_content)
 
@@ -506,37 +496,6 @@ class Ui_View(object):
 
         self.page_0_vl_content_6.addItem(self.verticalSpacer_17)
 
-        self.horizontalLayout_22 = QHBoxLayout()
-        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_22.addItem(self.horizontalSpacer_12)
-
-        self.pb_exponential_distribution_calculate = QPushButton(self.page_1)
-        self.pb_exponential_distribution_calculate.setObjectName(u"pb_exponential_distribution_calculate")
-
-        self.horizontalLayout_22.addWidget(self.pb_exponential_distribution_calculate)
-
-        self.horizontalSpacer_4 = QSpacerItem(12, 32, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_22.addItem(self.horizontalSpacer_4)
-
-        self.cb_exponential_distribution_draw = QCheckBox(self.page_1)
-        self.cb_exponential_distribution_draw.setObjectName(u"cb_exponential_distribution_draw")
-
-        self.horizontalLayout_22.addWidget(self.cb_exponential_distribution_draw)
-
-        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_22.addItem(self.horizontalSpacer_13)
-
-
-        self.page_0_vl_content_6.addLayout(self.horizontalLayout_22)
-
-        self.verticalSpacer_23 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
-
-        self.page_0_vl_content_6.addItem(self.verticalSpacer_23)
-
         self.horizontalLayout_25 = QHBoxLayout()
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.label_38 = QLabel(self.page_1)
@@ -578,13 +537,35 @@ class Ui_View(object):
 
         self.page_0_vl_content_6.addLayout(self.horizontalLayout_26)
 
+        self.verticalSpacer_23 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+
+        self.page_0_vl_content_6.addItem(self.verticalSpacer_23)
+
+        self.horizontalLayout_22 = QHBoxLayout()
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_22.addItem(self.horizontalSpacer_12)
+
+        self.pb_exponential_distribution_calculate = QPushButton(self.page_1)
+        self.pb_exponential_distribution_calculate.setObjectName(u"pb_exponential_distribution_calculate")
+
+        self.horizontalLayout_22.addWidget(self.pb_exponential_distribution_calculate)
+
+        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_22.addItem(self.horizontalSpacer_13)
+
+
+        self.page_0_vl_content_6.addLayout(self.horizontalLayout_22)
+
         self.verticalSpacer_25 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
 
         self.page_0_vl_content_6.addItem(self.verticalSpacer_25)
 
         self.page_0_vl_content_6.setStretch(2, 1)
-        self.page_0_vl_content_6.setStretch(6, 1)
-        self.page_0_vl_content_6.setStretch(8, 8)
+        self.page_0_vl_content_6.setStretch(4, 1)
+        self.page_0_vl_content_6.setStretch(6, 8)
 
         self.verticalLayout_2.addLayout(self.page_0_vl_content_6)
 
@@ -644,37 +625,6 @@ class Ui_View(object):
 
         self.page_0_vl_content_7.addLayout(self.horizontalLayout_27)
 
-        self.verticalSpacer_20 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
-
-        self.page_0_vl_content_7.addItem(self.verticalSpacer_20)
-
-        self.horizontalLayout_28 = QHBoxLayout()
-        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
-        self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_28.addItem(self.horizontalSpacer_14)
-
-        self.pb_normal_distribution_calculate = QPushButton(self.page_2)
-        self.pb_normal_distribution_calculate.setObjectName(u"pb_normal_distribution_calculate")
-
-        self.horizontalLayout_28.addWidget(self.pb_normal_distribution_calculate)
-
-        self.horizontalSpacer_6 = QSpacerItem(12, 32, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_28.addItem(self.horizontalSpacer_6)
-
-        self.cb_normal_distribution_draw = QCheckBox(self.page_2)
-        self.cb_normal_distribution_draw.setObjectName(u"cb_normal_distribution_draw")
-
-        self.horizontalLayout_28.addWidget(self.cb_normal_distribution_draw)
-
-        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_28.addItem(self.horizontalSpacer_16)
-
-
-        self.page_0_vl_content_7.addLayout(self.horizontalLayout_28)
-
         self.verticalSpacer_24 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
 
         self.page_0_vl_content_7.addItem(self.verticalSpacer_24)
@@ -720,13 +670,35 @@ class Ui_View(object):
 
         self.page_0_vl_content_7.addLayout(self.horizontalLayout_30)
 
+        self.verticalSpacer_20 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+
+        self.page_0_vl_content_7.addItem(self.verticalSpacer_20)
+
+        self.horizontalLayout_28 = QHBoxLayout()
+        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
+        self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_28.addItem(self.horizontalSpacer_14)
+
+        self.pb_normal_distribution_calculate = QPushButton(self.page_2)
+        self.pb_normal_distribution_calculate.setObjectName(u"pb_normal_distribution_calculate")
+
+        self.horizontalLayout_28.addWidget(self.pb_normal_distribution_calculate)
+
+        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_28.addItem(self.horizontalSpacer_16)
+
+
+        self.page_0_vl_content_7.addLayout(self.horizontalLayout_28)
+
         self.verticalSpacer_27 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
 
         self.page_0_vl_content_7.addItem(self.verticalSpacer_27)
 
         self.page_0_vl_content_7.setStretch(2, 1)
-        self.page_0_vl_content_7.setStretch(6, 1)
-        self.page_0_vl_content_7.setStretch(8, 8)
+        self.page_0_vl_content_7.setStretch(4, 1)
+        self.page_0_vl_content_7.setStretch(6, 8)
 
         self.verticalLayout_9.addLayout(self.page_0_vl_content_7)
 
@@ -746,7 +718,7 @@ class Ui_View(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 484, 1076))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 340, 1318))
         self.verticalLayout_8 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.page_about = QVBoxLayout()
@@ -913,7 +885,7 @@ class Ui_View(object):
 
         self.retranslateUi(View)
 
-        self.sw_pages.setCurrentIndex(2)
+        self.sw_pages.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(View)
@@ -934,25 +906,23 @@ class Ui_View(object):
         self.label_6.setText(QCoreApplication.translate("View", u"a", None))
         self.label_7.setText(QCoreApplication.translate("View", u"b", None))
         self.label_8.setText(QCoreApplication.translate("View", u"N", None))
-        self.pb_uniform_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
-        self.cb_uniform_distribution_draw.setText(QCoreApplication.translate("View", u"\u0413\u0440\u0430\u0444\u0438\u043a", None))
         self.label_9.setText(QCoreApplication.translate("View", u"\u0394_1", None))
+        self.le_uniform_distribution_delta_1.setText("")
         self.label_10.setText(QCoreApplication.translate("View", u"\u0394_2", None))
+        self.pb_uniform_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
         self.label_4.setText(QCoreApplication.translate("View", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
         self.label_35.setText(QCoreApplication.translate("View", u"\u03bb", None))
         self.label_37.setText(QCoreApplication.translate("View", u"N", None))
-        self.pb_exponential_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
-        self.cb_exponential_distribution_draw.setText(QCoreApplication.translate("View", u"\u0413\u0440\u0430\u0444\u0438\u043a", None))
         self.label_38.setText(QCoreApplication.translate("View", u"\u0394_1", None))
         self.label_39.setText(QCoreApplication.translate("View", u"\u0394_2", None))
+        self.pb_exponential_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
         self.label_5.setText(QCoreApplication.translate("View", u"\u041d\u043e\u0440\u043c\u0430\u043b\u044c\u043d\u043e\u0435 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
         self.label_40.setText(QCoreApplication.translate("View", u"a", None))
         self.label_41.setText(QCoreApplication.translate("View", u"\u03c3^2", None))
         self.label_42.setText(QCoreApplication.translate("View", u"N", None))
-        self.pb_normal_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
-        self.cb_normal_distribution_draw.setText(QCoreApplication.translate("View", u"\u0413\u0440\u0430\u0444\u0438\u043a", None))
         self.label_43.setText(QCoreApplication.translate("View", u"\u0394_1", None))
         self.label_44.setText(QCoreApplication.translate("View", u"\u0394_2", None))
+        self.pb_normal_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
         self.gb_about.setTitle(QCoreApplication.translate("View", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
         self.l_about.setText(QCoreApplication.translate("View", u"<html><head/><body><p>\u0414\u0430\u043d\u043d\u0430\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 \u0431\u044b\u043b\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u0430 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043d\u043e\u0439 \u0440\u0430\u0431\u043e\u0442\u044b \u043f\u043e \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0443 &quot;\u0421\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437 \u0438 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043d\u0442\u0435\u043b\u043b\u0435\u043a\u0442\u0443\u043b\u044c\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c&quot; \u0441\u0442\u0443\u0434\u0435\u043d\u0442\u043e\u043c 1 \u043a\u0443\u0440\u0441\u0430 \u043c\u0430\u0433\u0438\u0441\u0442\u0440\u0430\u0442\u0443\u0440\u044b<span style=\" font-weight:700;\"/>09.04.01 <span style=\" font-"
                         "weight:700;\">\u2014</span><span style=\" font-weight:700;\">\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430 \u0438 \u0432\u044b\u0447\u0438\u0441\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430, </span><span style=\" font-weight:700;\">\u041a\u0430\u0440\u0438\u043c\u043e\u0432\u044b\u043c \u0421\u0430\u0444\u043e</span>.</p></body></html>", None))

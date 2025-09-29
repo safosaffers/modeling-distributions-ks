@@ -182,7 +182,7 @@ QCheckBox {
      <property name="frameShadow">
       <enum>QFrame::Shadow::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="2,0">
+     <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="2,5">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -461,7 +461,7 @@ QPushButton:hover{
          <number>0</number>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="page_0">
          <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -563,6 +563,29 @@ QPushButton:hover{
                <widget class="QPushButton" name="pb_uniform_distribution_calculate">
                 <property name="text">
                  <string>Выполнить рассчёт</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Policy::Minimum</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>15</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="cb_uniform_distribution_draw">
+                <property name="text">
+                 <string>График</string>
                 </property>
                </widget>
               </item>
@@ -760,6 +783,29 @@ QPushButton:hover{
                  <widget class="QPushButton" name="pb_exponential_distribution_calculate">
                   <property name="text">
                    <string>Выполнить рассчёт</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Policy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>12</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="cb_exponential_distribution_draw">
+                  <property name="text">
+                   <string>График</string>
                   </property>
                  </widget>
                 </item>
@@ -973,6 +1019,29 @@ QPushButton:hover{
                  </widget>
                 </item>
                 <item>
+                 <spacer name="horizontalSpacer_6">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Policy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>12</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="cb_normal_distribution_draw">
+                  <property name="text">
+                   <string>График</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <spacer name="horizontalSpacer_16">
                   <property name="orientation">
                    <enum>Qt::Orientation::Horizontal</enum>
@@ -1097,8 +1166,8 @@ QPushButton:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>527</width>
-                 <height>1058</height>
+                 <width>484</width>
+                 <height>1076</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_8">

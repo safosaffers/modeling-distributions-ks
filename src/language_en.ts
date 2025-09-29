@@ -33,7 +33,7 @@ Distribution</translation>
         <location filename="View/Ui_View.ui" line="328"/>
         <location filename="View/Ui_View.ui" line="703"/>
         <source>О программе</source>
-        <translation>About the Program</translation>
+        <translation>About</translation>
     </message>
     <message>
         <location filename="View/Ui_View.ui" line="384"/>

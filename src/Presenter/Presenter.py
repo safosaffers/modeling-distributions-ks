@@ -3,6 +3,7 @@
 from Model.Model import Model
 from View.View import View
 from PySide6.QtWidgets import QMessageBox, QTableWidgetItem
+import matplotlib.pyplot as plt
 
 
 class Presenter:
@@ -48,6 +49,9 @@ class Presenter:
             self._display_sample_in_table(
                 sample, self.view.ui.tw_uniform_distribution_result)
 
+            if self.view.ui.cb_uniform_distribution_draw.isChecked():
+                self._plot_histogram(sample, "Равномерное распределение")
+
         except ValueError as e:
             self._show_error(f"Некорректный ввод: {e}")
         except Exception as e:
@@ -75,6 +79,9 @@ class Presenter:
 
             self._display_sample_in_table(
                 sample, self.view.ui.tw_exponential_distribution_result)
+
+            if self.view.ui.cb_exponential_distribution_draw.isChecked():
+                self._plot_histogram(sample, "Показательное распределение")
 
         except ValueError as e:
             self._show_error(f"Некорректный ввод: {e}")
@@ -105,6 +112,9 @@ class Presenter:
             self._display_sample_in_table(
                 sample, self.view.ui.tw_normal_distribution_result)
 
+            if self.view.ui.cb_normal_distribution_draw.isChecked():
+                self._plot_histogram(sample, "Нормальное распределение")
+
         except ValueError as e:
             self._show_error(f"Некорректный ввод: {e}")
         except Exception as e:
@@ -121,3 +131,14 @@ class Presenter:
             table_widget.setItem(i, 0, QTableWidgetItem(f"{value:.6f}"))
 
         table_widget.resizeColumnsToContents()
+
+    def _plot_histogram(self, sample, title="Гистограмма выборки"):
+        """Отображает гистограмму выборки в отдельном окне."""
+        plt.figure(figsize=(8, 5))
+        plt.hist(sample, bins='auto', edgecolor='black', alpha=0.7)
+        plt.title(title)
+        plt.xlabel("Значение")
+        plt.ylabel("Частота")
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.tight_layout()
+        plt.show()

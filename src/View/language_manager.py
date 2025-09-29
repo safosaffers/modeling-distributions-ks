@@ -6,6 +6,7 @@ from PySide6.QtGui import QIcon
 from View.IconButton import IconButton
 from PySide6.QtCore import Qt
 
+
 class LanguageManager:
     SUPPORTED_LANGUAGES = {
         "ru": ":/images/ru.svg",
@@ -62,7 +63,8 @@ class LanguageManager:
 
     def _update_window_title(self):
         titles = {
-            "ru": "Каримов Сафо. Последовательности Холла и их оценка",
-            "en": "Saf Karimov. Hall Sequences and Their Evaluation"
+            "ru": "Каримов Сафо 5095. Моделирование различных видов распределений",
+            "en": "Karimov Safo 5095. Modeling of various types of distributions"
         }
+
         self.view.setWindowTitle(titles.get(self.current_language, ""))

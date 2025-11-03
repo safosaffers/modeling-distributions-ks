@@ -26,6 +26,7 @@ class View(QWidget):
         self.ui.pb_page_1.clicked.connect(lambda: self.switch_page(1))
         self.ui.pb_page_2.clicked.connect(lambda: self.switch_page(2))
         self.ui.pb_page_3.clicked.connect(lambda: self.switch_page(3))
+        self.ui.pb_page_4.clicked.connect(lambda: self.switch_page(4))
 
         # Начальная страница
         self.switch_page(0)

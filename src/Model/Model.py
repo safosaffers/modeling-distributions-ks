@@ -3,6 +3,10 @@
 import random
 from typing import List, Tuple
 import math
+from scipy import stats
+import numpy as np
+
+
 class Model:
     @staticmethod
     def _calculate_uniform(a: float, b: float, N: int) -> Tuple[float, float, float, float, List[float]]:
@@ -98,3 +102,119 @@ class Model:
         Dx_emp = sum((x - Mx_emp) ** 2 for x in sample) / N
 
         return Mx_theor, Dx_theor, Mx_emp, Dx_emp, sample
+
+    @staticmethod
+    def calculate_pearson_criterion(sample: List[float], alpha: float = 0.05, num_intervals: int = None) -> dict:
+        """
+        Вычисляет критерий Пирсона для проверки гипотезы о виде распределения.
+        
+        :param sample: выборка случайных величин
+        :param alpha: уровень значимости (по умолчанию 0.05)
+        :param num_intervals: количество интервалов для группировки данных (если None, будет рассчитано автоматически)
+        :return: словарь с результатами критерия Пирсона
+        """
+        if not sample:
+            raise ValueError("Выборка не должна быть пустой")
+        
+        if len(sample) < 5:
+            raise ValueError("Выборка должна содержать не менее 5 элементов")
+        
+        if not (0 < alpha < 1):
+            raise ValueError("Уровень значимости должен быть в интервале (0, 1)")
+        
+        n = len(sample)
+        
+        # Выбираем количество интервалов
+        if num_intervals is None:
+            # Эмпирическое правило: num_intervals = sqrt(n) или 2 * sqrt(n)
+            # Но не менее 5 и не более n//2
+            num_intervals = max(5, int(math.sqrt(n)))
+        
+        # Проверка, чтобы интервалов было не больше, чем элементов в выборке
+        num_intervals = min(num_intervals, n // 2)
+        
+        if num_intervals < 5:
+            raise ValueError("Размер выборки слишком мал для корректного применения критерия Пирсона")
+        
+        # Определяем границы интервалов
+        min_val = min(sample)
+        max_val = max(sample)
+        
+        # Если все значения одинаковы, расширяем диапазон
+        if min_val == max_val:
+            min_val -= 0.5
+            max_val += 0.5
+        
+        interval_width = (max_val - min_val) / num_intervals
+        
+        # Границы интервалов (левая граница включена, правая - нет, кроме последнего)
+        interval_bounds = [min_val + i * interval_width for i in range(num_intervals + 1)]
+        
+        # Исправляем последнюю границу, чтобы включить все значения
+        interval_bounds[-1] = max_val
+        
+        # Вычисляем наблюдаемые частоты
+        observed_freq = [0] * num_intervals
+        
+        for value in sample:
+            # Находим интервал для текущего значения
+            assigned = False
+            for i in range(num_intervals):
+                if i == num_intervals - 1:  # Последний интервал - включает верхнюю границу
+                    if interval_bounds[i] <= value <= interval_bounds[i + 1]:
+                        observed_freq[i] += 1
+                        assigned = True
+                        break
+                else:  # Другие интервалы - левая граница включена, правая - нет
+                    if interval_bounds[i] <= value < interval_bounds[i + 1]:
+                        observed_freq[i] += 1
+                        assigned = True
+                        break
+            
+            # Если не попало ни в один интервал (маловероятно, но на всякий случай)
+            if not assigned:
+                observed_freq[-1] += 1  # Относим к последнему интервалу
+        
+        # Вычисляем ожидаемые частоты (предполагаем равномерное распределение)
+        expected_freq = [n / num_intervals] * num_intervals
+        
+        # Вычисляем статистику критерия Пирсона
+        chi_squared_stat = 0
+        for obs, exp in zip(observed_freq, expected_freq):
+            if exp > 0:  # Избегаем деления на 0
+                chi_squared_stat += (obs - exp) ** 2 / exp
+            else:
+                # В редких случаях может быть нулевая ожидаемая частота
+                chi_squared_stat = float('inf')
+        
+        # Степеней свободы = число интервалов - 1 (для равномерного распределения)
+        # В общем случае: число интервалов - 1 - число оцененных параметров
+        degrees_of_freedom = num_intervals - 1
+        
+        # Критическое значение из хи-квадрат распределения
+        critical_value = stats.chi2.ppf(1 - alpha, degrees_of_freedom)
+        
+        # p-значение
+        p_value = 1 - stats.chi2.cdf(chi_squared_stat, degrees_of_freedom)
+        
+        # Решение: отвергаем гипотезу, если статистика больше критического значения
+        reject_hypothesis = chi_squared_stat > critical_value
+        
+        # Результат
+        result_info = {
+            "n": n,
+            "num_intervals": num_intervals,
+            "interval_bounds": interval_bounds,
+            "observed_frequencies": observed_freq,
+            "expected_frequencies": expected_freq,
+            "chi_squared_statistic": chi_squared_stat,
+            "critical_value": critical_value,
+            "degrees_of_freedom": degrees_of_freedom,
+            "alpha": alpha,
+            "p_value": p_value,
+            "reject_hypothesis": reject_hypothesis,
+            "hypothesis_accepted": not reject_hypothesis,
+            "message": f"Гипотеза о виде распределения {'принята' if not reject_hypothesis else 'отвергнута'} на уровне значимости α={alpha}"
+        }
+        
+        return result_info

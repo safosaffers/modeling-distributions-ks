@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_View.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.10.0
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -712,20 +712,20 @@ class Ui_View(object):
         self.verticalLayout_10.addLayout(self.verticalLayout_9)
 
         self.sw_pages.addWidget(self.page_2)
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.verticalLayout_11 = QVBoxLayout(self.page)
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.verticalLayout_11 = QVBoxLayout(self.page_4)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_7 = QVBoxLayout()
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.label_11 = QLabel(self.page)
+        self.label_11 = QLabel(self.page_4)
         self.label_11.setObjectName(u"label_11")
 
         self.verticalLayout_7.addWidget(self.label_11)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.tabWidget = QTabWidget(self.page)
+        self.tabWidget = QTabWidget(self.page_4)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
@@ -748,7 +748,7 @@ class Ui_View(object):
 
         self.horizontalLayout_5.addWidget(self.tabWidget)
 
-        self.frame = QFrame(self.page)
+        self.frame = QFrame(self.page_4)
         self.frame.setObjectName(u"frame")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
@@ -788,7 +788,7 @@ class Ui_View(object):
 
         self.verticalLayout_11.addLayout(self.verticalLayout_7)
 
-        self.sw_pages.addWidget(self.page)
+        self.sw_pages.addWidget(self.page_4)
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
         self.verticalLayout_6 = QVBoxLayout(self.page_3)

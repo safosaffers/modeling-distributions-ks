@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_View.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.3
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,7 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QGroupBox, QHBoxLayout,
     QHeaderView, QLabel, QLineEdit, QPushButton,
     QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QTabWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QVBoxLayout, QWidget)
 
 class Ui_View(object):
     def setupUi(self, View):
@@ -254,9 +255,14 @@ class Ui_View(object):
 
         self.pb_page_3 = QPushButton(self.f_menu)
         self.pb_page_3.setObjectName(u"pb_page_3")
-        self.pb_page_3.setFont(font1)
 
         self.verticalLayout_42.addWidget(self.pb_page_3)
+
+        self.pb_page_4 = QPushButton(self.f_menu)
+        self.pb_page_4.setObjectName(u"pb_page_4")
+        self.pb_page_4.setFont(font1)
+
+        self.verticalLayout_42.addWidget(self.pb_page_4)
 
         self.verticalSpacer_65 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -706,6 +712,83 @@ class Ui_View(object):
         self.verticalLayout_10.addLayout(self.verticalLayout_9)
 
         self.sw_pages.addWidget(self.page_2)
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.verticalLayout_11 = QVBoxLayout(self.page_4)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.label_11 = QLabel(self.page_4)
+        self.label_11.setObjectName(u"label_11")
+
+        self.verticalLayout_7.addWidget(self.label_11)
+
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.tabWidget = QTabWidget(self.page_4)
+        self.tabWidget.setObjectName(u"tabWidget")
+        self.tab = QWidget()
+        self.tab.setObjectName(u"tab")
+        self.verticalLayout_12 = QVBoxLayout(self.tab)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.teSample = QTextEdit(self.tab)
+        self.teSample.setObjectName(u"teSample")
+        self.teSample.setStyleSheet(u"QTextEdit {\n"
+"    background-color: rgb(255, 255, 255);\n"
+"}")
+
+        self.verticalLayout_12.addWidget(self.teSample)
+
+        self.btnPirson = QPushButton(self.tab)
+        self.btnPirson.setObjectName(u"btnPirson")
+
+        self.verticalLayout_12.addWidget(self.btnPirson)
+
+        self.tabWidget.addTab(self.tab, "")
+
+        self.horizontalLayout_5.addWidget(self.tabWidget)
+
+        self.frame = QFrame(self.page_4)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.vlHistogram = QVBoxLayout()
+        self.vlHistogram.setObjectName(u"vlHistogram")
+
+        self.verticalLayout_14.addLayout(self.vlHistogram)
+
+        self.lblPirsonInfo = QLabel(self.frame)
+        self.lblPirsonInfo.setObjectName(u"lblPirsonInfo")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.lblPirsonInfo.sizePolicy().hasHeightForWidth())
+        self.lblPirsonInfo.setSizePolicy(sizePolicy1)
+        self.lblPirsonInfo.setMinimumSize(QSize(100, 0))
+        self.lblPirsonInfo.setMaximumSize(QSize(16777215, 16777215))
+        self.lblPirsonInfo.setStyleSheet(u"")
+        self.lblPirsonInfo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_14.addWidget(self.lblPirsonInfo)
+
+        self.verticalLayout_14.setStretch(0, 7)
+        self.verticalLayout_14.setStretch(1, 3)
+
+        self.horizontalLayout_5.addWidget(self.frame)
+
+        self.horizontalLayout_5.setStretch(0, 5)
+        self.horizontalLayout_5.setStretch(1, 5)
+
+        self.verticalLayout_7.addLayout(self.horizontalLayout_5)
+
+        self.verticalLayout_7.setStretch(0, 1)
+        self.verticalLayout_7.setStretch(1, 9)
+
+        self.verticalLayout_11.addLayout(self.verticalLayout_7)
+
+        self.sw_pages.addWidget(self.page_4)
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
         self.verticalLayout_6 = QVBoxLayout(self.page_3)
@@ -718,7 +801,7 @@ class Ui_View(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 340, 1318))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 573, 1032))
         self.verticalLayout_8 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.page_about = QVBoxLayout()
@@ -885,7 +968,8 @@ class Ui_View(object):
 
         self.retranslateUi(View)
 
-        self.sw_pages.setCurrentIndex(0)
+        self.sw_pages.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(View)
@@ -899,7 +983,9 @@ class Ui_View(object):
 "\u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
         self.pb_page_2.setText(QCoreApplication.translate("View", u"\u041d\u043e\u0440\u043c\u0430\u043b\u044c\u043d\u043e\u0435\n"
 "\u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
-        self.pb_page_3.setText(QCoreApplication.translate("View", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
+        self.pb_page_3.setText(QCoreApplication.translate("View", u"\u041a\u0440\u0438\u0442\u0435\u0440\u0438\u0439\n"
+"\u041f\u0438\u0440\u0441\u043e\u043d\u0430", None))
+        self.pb_page_4.setText(QCoreApplication.translate("View", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
         self.label.setText(QCoreApplication.translate("View", u"\u042f\u0437\u044b\u043a:", None))
         self.label_2.setText(QCoreApplication.translate("View", u"\u0422\u0435\u043c\u0430:", None))
         self.label_3.setText(QCoreApplication.translate("View", u"\u0420\u0430\u0432\u043d\u043e\u043c\u0435\u0440\u043d\u043e\u0435 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
@@ -923,6 +1009,10 @@ class Ui_View(object):
         self.label_43.setText(QCoreApplication.translate("View", u"\u0394_1", None))
         self.label_44.setText(QCoreApplication.translate("View", u"\u0394_2", None))
         self.pb_normal_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
+        self.label_11.setText(QCoreApplication.translate("View", u"\u041a\u0440\u0438\u0442\u0435\u0440\u0438\u0439 \u0438\u0441\u0442\u0438\u043d\u043d\u043e\u0441\u0442\u0438 \u041f\u0438\u0440\u0441\u043e\u043d\u0430", None))
+        self.btnPirson.setText(QCoreApplication.translate("View", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0438\u0442\u044c", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("View", u"\u0412\u0432\u043e\u0434 \u0432\u044b\u0431\u043e\u0440\u043a\u0438", None))
+        self.lblPirsonInfo.setText(QCoreApplication.translate("View", u"\u2014", None))
         self.gb_about.setTitle(QCoreApplication.translate("View", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
         self.l_about.setText(QCoreApplication.translate("View", u"<html><head/><body><p>\u0414\u0430\u043d\u043d\u0430\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 \u0431\u044b\u043b\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u0430 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043d\u043e\u0439 \u0440\u0430\u0431\u043e\u0442\u044b \u043f\u043e \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0443 &quot;\u0421\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437 \u0438 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043d\u0442\u0435\u043b\u043b\u0435\u043a\u0442\u0443\u043b\u044c\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c&quot; \u0441\u0442\u0443\u0434\u0435\u043d\u0442\u043e\u043c 1 \u043a\u0443\u0440\u0441\u0430 \u043c\u0430\u0433\u0438\u0441\u0442\u0440\u0430\u0442\u0443\u0440\u044b<span style=\" font-weight:700;\"/>09.04.01 <span style=\" font-"
                         "weight:700;\">\u2014</span><span style=\" font-weight:700;\">\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430 \u0438 \u0432\u044b\u0447\u0438\u0441\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430, </span><span style=\" font-weight:700;\">\u041a\u0430\u0440\u0438\u043c\u043e\u0432\u044b\u043c \u0421\u0430\u0444\u043e</span>.</p></body></html>", None))

@@ -1091,7 +1091,7 @@ QPushButton:hover{
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="page">
+        <widget class="QWidget" name="page_4">
          <layout class="QVBoxLayout" name="verticalLayout_11">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,9">

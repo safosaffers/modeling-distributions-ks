@@ -15,17 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGroupBox, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QPushButton,
-    QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
-    QTabWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGroupBox,
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
+    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
     QVBoxLayout, QWidget)
 
 class Ui_View(object):
     def setupUi(self, View):
         if not View.objectName():
             View.setObjectName(u"View")
-        View.resize(850, 550)
+        View.resize(1022, 684)
         View.setMinimumSize(QSize(850, 350))
         View.setStyleSheet(u"\n"
 "QWidget {\n"
@@ -725,28 +725,42 @@ class Ui_View(object):
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.tabWidget = QTabWidget(self.page_4)
-        self.tabWidget.setObjectName(u"tabWidget")
-        self.tab = QWidget()
-        self.tab.setObjectName(u"tab")
-        self.verticalLayout_12 = QVBoxLayout(self.tab)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.teSample = QTextEdit(self.tab)
+        self.frame_3 = QFrame(self.page_4)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_15 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_13 = QVBoxLayout()
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.teSample = QTextEdit(self.frame_3)
         self.teSample.setObjectName(u"teSample")
         self.teSample.setStyleSheet(u"QTextEdit {\n"
 "    background-color: rgb(255, 255, 255);\n"
 "}")
 
-        self.verticalLayout_12.addWidget(self.teSample)
+        self.verticalLayout_13.addWidget(self.teSample)
 
-        self.btnPirson = QPushButton(self.tab)
+        self.comboBox = QComboBox(self.frame_3)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+
+        self.verticalLayout_13.addWidget(self.comboBox)
+
+
+        self.verticalLayout_15.addLayout(self.verticalLayout_13)
+
+        self.btnPirson = QPushButton(self.frame_3)
         self.btnPirson.setObjectName(u"btnPirson")
+        self.btnPirson.setEnabled(False)
 
-        self.verticalLayout_12.addWidget(self.btnPirson)
+        self.verticalLayout_15.addWidget(self.btnPirson)
 
-        self.tabWidget.addTab(self.tab, "")
 
-        self.horizontalLayout_5.addWidget(self.tabWidget)
+        self.horizontalLayout_5.addWidget(self.frame_3)
 
         self.frame = QFrame(self.page_4)
         self.frame.setObjectName(u"frame")
@@ -770,6 +784,7 @@ class Ui_View(object):
         self.lblPirsonInfo.setMaximumSize(QSize(16777215, 16777215))
         self.lblPirsonInfo.setStyleSheet(u"")
         self.lblPirsonInfo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.lblPirsonInfo.setWordWrap(True)
 
         self.verticalLayout_14.addWidget(self.lblPirsonInfo)
 
@@ -778,7 +793,7 @@ class Ui_View(object):
 
         self.horizontalLayout_5.addWidget(self.frame)
 
-        self.horizontalLayout_5.setStretch(0, 5)
+        self.horizontalLayout_5.setStretch(0, 4)
         self.horizontalLayout_5.setStretch(1, 5)
 
         self.verticalLayout_7.addLayout(self.horizontalLayout_5)
@@ -801,7 +816,7 @@ class Ui_View(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 573, 1032))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 386, 1292))
         self.verticalLayout_8 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.page_about = QVBoxLayout()
@@ -960,7 +975,7 @@ class Ui_View(object):
         self.horizontalLayout_24.addWidget(self.sw_pages)
 
         self.horizontalLayout_24.setStretch(0, 2)
-        self.horizontalLayout_24.setStretch(1, 5)
+        self.horizontalLayout_24.setStretch(1, 8)
 
         self.verticalLayout.addWidget(self.frame_2)
 
@@ -969,7 +984,6 @@ class Ui_View(object):
         self.retranslateUi(View)
 
         self.sw_pages.setCurrentIndex(3)
-        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(View)
@@ -1010,8 +1024,12 @@ class Ui_View(object):
         self.label_44.setText(QCoreApplication.translate("View", u"\u0394_2", None))
         self.pb_normal_distribution_calculate.setText(QCoreApplication.translate("View", u"\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0441\u0441\u0447\u0451\u0442", None))
         self.label_11.setText(QCoreApplication.translate("View", u"\u041a\u0440\u0438\u0442\u0435\u0440\u0438\u0439 \u0438\u0441\u0442\u0438\u043d\u043d\u043e\u0441\u0442\u0438 \u041f\u0438\u0440\u0441\u043e\u043d\u0430", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("View", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("View", u"\u0420\u0430\u0432\u043d\u043e\u043c\u0435\u0440\u043d\u043e\u0435 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("View", u"\u041d\u043e\u0440\u043c\u0430\u043b\u044c\u043d\u043e\u0435 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("View", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435", None))
+
         self.btnPirson.setText(QCoreApplication.translate("View", u"\u0412\u044b\u0447\u0438\u0441\u043b\u0438\u0442\u044c", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("View", u"\u0412\u0432\u043e\u0434 \u0432\u044b\u0431\u043e\u0440\u043a\u0438", None))
         self.lblPirsonInfo.setText(QCoreApplication.translate("View", u"\u2014", None))
         self.gb_about.setTitle(QCoreApplication.translate("View", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
         self.l_about.setText(QCoreApplication.translate("View", u"<html><head/><body><p>\u0414\u0430\u043d\u043d\u0430\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 \u0431\u044b\u043b\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u0430 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043d\u043e\u0439 \u0440\u0430\u0431\u043e\u0442\u044b \u043f\u043e \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0443 &quot;\u0421\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437 \u0438 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043d\u0442\u0435\u043b\u043b\u0435\u043a\u0442\u0443\u043b\u044c\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c&quot; \u0441\u0442\u0443\u0434\u0435\u043d\u0442\u043e\u043c 1 \u043a\u0443\u0440\u0441\u0430 \u043c\u0430\u0433\u0438\u0441\u0442\u0440\u0430\u0442\u0443\u0440\u044b<span style=\" font-weight:700;\"/>09.04.01 <span style=\" font-"

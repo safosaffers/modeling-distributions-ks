@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>550</height>
+    <width>1022</width>
+    <height>684</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -182,7 +182,7 @@ QCheckBox {
      <property name="frameShadow">
       <enum>QFrame::Shadow::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="2,5">
+     <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="2,8">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -1103,35 +1103,64 @@ QPushButton:hover{
              </widget>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="5,5">
+             <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="4,5">
               <item>
-               <widget class="QTabWidget" name="tabWidget">
-                <property name="currentIndex">
-                 <number>0</number>
+               <widget class="QFrame" name="frame_3">
+                <property name="frameShape">
+                 <enum>QFrame::Shape::StyledPanel</enum>
                 </property>
-                <widget class="QWidget" name="tab">
-                 <attribute name="title">
-                  <string>Ввод выборки</string>
-                 </attribute>
-                 <layout class="QVBoxLayout" name="verticalLayout_12">
-                  <item>
-                   <widget class="QTextEdit" name="teSample">
-                    <property name="styleSheet">
-                     <string notr="true">QTextEdit {
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_15">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                   <item>
+                    <widget class="QTextEdit" name="teSample">
+                     <property name="styleSheet">
+                      <string notr="true">QTextEdit {
     background-color: rgb(255, 255, 255);
 }</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnPirson">
-                    <property name="text">
-                     <string>Вычислить</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="comboBox">
+                     <item>
+                      <property name="text">
+                       <string>Выберите распределение</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Равномерное распределение</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Нормальное распределение</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Показательное распределение</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPirson">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Вычислить</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -1175,6 +1204,9 @@ QPushButton:hover{
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -1203,8 +1235,8 @@ QPushButton:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>573</width>
-                 <height>1032</height>
+                 <width>386</width>
+                 <height>1292</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_8">

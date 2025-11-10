@@ -8,6 +8,33 @@ import numpy as np
 
 
 class Model:
+    sample_uniform = []
+    sample_exponential = []
+    sample_normal = []
+    
+    def store_sample_uniform(self, sample):
+        """Store uniform distribution sample"""
+        self.sample_uniform = sample
+    
+    def store_sample_exponential(self, sample):
+        """Store exponential distribution sample"""
+        self.sample_exponential = sample
+    
+    def store_sample_normal(self, sample):
+        """Store normal distribution sample"""
+        self.sample_normal = sample
+    
+    def get_sample_by_type(self, distribution_type):
+        """Get sample by distribution type"""
+        if distribution_type == "Равномерное распределение":
+            return self.sample_uniform
+        elif distribution_type == "Нормальное распределение":
+            return self.sample_normal
+        elif distribution_type == "Показательное распределение":
+            return self.sample_exponential
+        else:
+            return []
+    
     @staticmethod
     def _calculate_uniform(a: float, b: float, N: int) -> Tuple[float, float, float, float, List[float]]:
         """
@@ -216,5 +243,160 @@ class Model:
             "hypothesis_accepted": not reject_hypothesis,
             "message": f"Гипотеза о виде распределения {'принята' if not reject_hypothesis else 'отвергнута'} на уровне значимости α={alpha}"
         }
+        
+        return result_info
+
+    @staticmethod
+    def calculate_pearson_criterion_for_distribution(sample: List[float], distribution_type: str) -> dict:
+        """
+        Вычисляет критерий Пирсона для проверки гипотезы о виде распределения.
+        
+        :param sample: выборка случайных величин
+        :param distribution_type: тип распределения ("Равномерное распределение", "Нормальное распределение", "Показательное распределение")
+        :return: словарь с результатами критерия Пирсона
+        """
+        if not sample:
+            raise ValueError("Выборка не должна быть пустой")
+        
+        if len(sample) < 5:
+            raise ValueError("Выборка должна содержать не менее 5 элементов")
+        
+        from scipy import stats
+        import numpy as np
+        
+        n = len(sample)
+        
+        # Определяем количество интервалов k ≈ sqrt(n), но не менее 5 и не более 20
+        k = max(5, min(20, int(math.sqrt(n))))
+        
+        # Оценка параметров распределения
+        if distribution_type == "Нормальное распределение":
+            # Для нормального: mu = среднее(data), sigma = стандартное_отклонение(data, ddof=1)
+            mu = np.mean(sample)
+            sigma = np.std(sample, ddof=1)
+            r = 2  # Оценено 2 параметра (mu, sigma)
+            
+        elif distribution_type == "Равномерное распределение":
+            # Для равномерного: a = min(data), b = max(data)
+            a = min(sample)
+            b = max(sample)
+            r = 2  # Оценено 2 параметра (a, b)
+            
+        elif distribution_type == "Показательное распределение":
+            # Для показательного: lambda = 1 / среднее(data)
+            lambda_param = 1 / np.mean(sample)
+            r = 1  # Оценен 1 параметр (lambda)
+        else:
+            raise ValueError(f"Неизвестный тип распределения: {distribution_type}")
+        
+        # Создаем гистограмму для получения наблюдаемых частот
+        observed_freq, bin_edges = np.histogram(sample, bins=k)
+        
+        # Вычисляем ожидаемые частоты
+        expected_freq = []
+        
+        if distribution_type == "Нормальное распределение":
+            # Вычисляем ожидаемые вероятности для каждого интервала
+            for i in range(k):
+                # Вероятность попадания в интервал [bin_edges[i], bin_edges[i+1]]
+                prob = stats.norm.cdf(bin_edges[i+1], loc=mu, scale=sigma) - \
+                       stats.norm.cdf(bin_edges[i], loc=mu, scale=sigma)
+                expected_freq.append(n * prob)
+                
+        elif distribution_type == "Равномерное распределение":
+            # Вычисляем ожидаемые вероятности для каждого интервала
+            for i in range(k):
+                # Вероятность попадания в интервал [bin_edges[i], bin_edges[i+1]]
+                prob = stats.uniform.cdf(bin_edges[i+1], loc=a, scale=b-a) - \
+                       stats.uniform.cdf(bin_edges[i], loc=a, scale=b-a)
+                expected_freq.append(n * prob)
+                
+        elif distribution_type == "Показательное распределение":
+            # Вычисляем ожидаемые вероятности для каждого интервала
+            for i in range(k):
+                # Вероятность попадания в интервал [bin_edges[i], bin_edges[i+1]]
+                # Для показательного распределения x >= 0
+                left_edge = max(0, bin_edges[i])
+                right_edge = bin_edges[i+1] 
+                prob = stats.expon.cdf(right_edge, scale=1/lambda_param) - \
+                       stats.expon.cdf(left_edge, scale=1/lambda_param)
+                expected_freq.append(n * prob)
+        
+        # Объединяем интервалы, где ожидаемая частота < 5
+        # Это нужно делать аккуратно - объединять соседние интервалы
+        final_observed_freq = []
+        final_expected_freq = []
+        
+        i = 0
+        while i < len(observed_freq):
+            obs_freq = observed_freq[i]
+            exp_freq = expected_freq[i]
+            
+            # Если текущая ожидаемая частота меньше 5, объединяем с соседними
+            while exp_freq < 5 and i < len(observed_freq) - 1:
+                i += 1
+                if i < len(observed_freq):
+                    obs_freq += observed_freq[i]
+                    exp_freq += expected_freq[i]
+            
+            final_observed_freq.append(obs_freq)
+            final_expected_freq.append(exp_freq)
+            i += 1
+        
+        # Проверяем, что количество интервалов не слишком мало
+        if len(final_observed_freq) < 3:
+            raise ValueError("Недостаточно интервалов для корректного применения критерия Пирсона")
+        
+        # Обновляем количество интервалов после объединения
+        k = len(final_observed_freq)
+        
+        # Вычисляем статистику критерия Пирсона
+        chi_squared_stat = 0
+        for obs, exp in zip(final_observed_freq, final_expected_freq):
+            if exp > 0:
+                chi_squared_stat += (obs - exp) ** 2 / exp
+            else:
+                chi_squared_stat = float('inf')  # Если ожидаемая частота 0
+        
+        # Число степеней свободы: df = k - 1 - r
+        df = k - 1 - r
+        
+        if df <= 0:
+            raise ValueError("Число степеней свободы должно быть положительным")
+        
+        # p-значение
+        p_value = 1 - stats.chi2.cdf(chi_squared_stat, df)
+        
+        # Решение: если p < 0.05 - гипотеза отвергается
+        reject_hypothesis = p_value < 0.05
+        
+        if reject_hypothesis:
+            conclusion = "Гипотеза о соответствии распределению отвергается"
+        else:
+            conclusion = "Гипотеза о соответствии распределению не противоречит данным"
+        
+        # Результат
+        result_info = {
+            "n": n,
+            "k": k,
+            "bin_edges": bin_edges.tolist() if isinstance(bin_edges, np.ndarray) else list(bin_edges),
+            "observed_frequencies": final_observed_freq,
+            "expected_frequencies": final_expected_freq,
+            "chi_squared_statistic": chi_squared_stat,
+            "degrees_of_freedom": df,
+            "p_value": p_value,
+            "reject_hypothesis": reject_hypothesis,
+            "conclusion": conclusion,
+            "distribution_type": distribution_type,
+            "parameters": {}
+        }
+        
+        # Сохраняем оценённые параметры
+        if distribution_type == "Нормальное распределение":
+            result_info["parameters"] = {"mu": mu, "sigma": sigma}
+        elif distribution_type == "Равномерное распределение":
+            result_info["parameters"] = {"a": a, "b": b}
+        elif distribution_type == "Показательное распределение":
+            result_info["parameters"] = {"lambda": lambda_param}
         
         return result_info
